@@ -63,9 +63,7 @@ module.exports = {
 
   changeEventRoom (root, { id, roomId }, context) {
     return models.Event.findById(id)
-            .then(event => {
-              event.setRoom(id);
-            });
+            .then(event => event.setRoom(roomId));
   },
 
   removeEvent (root, { id }, context) {
